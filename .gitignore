@@ -1,0 +1,20 @@
+# Dependências e builds
+**/node_modules/
+**/dist/
+**/dist-ssr/
+electron/resources/
+
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# Ambiente e editor
+.env
+.env.*
+*.local
+.vs/
+.idea/
+.DS_Store
+*.log

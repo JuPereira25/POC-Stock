@@ -1,0 +1,122 @@
+.card {
+  display: flex;
+  min-height: 460px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e3e3e3;
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 7%);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid #ececec;
+}
+
+.search {
+  display: flex;
+  width: min(100%, 520px);
+}
+
+.search input {
+  min-width: 0;
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #c9c9c9;
+  border-right: 0;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  color: var(--color-primary-text);
+  font: inherit;
+  outline: none;
+}
+
+.search input:focus {
+  border-color: var(--color-border);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+
+.search button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0 var(--space-md);
+  border: 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: #252525;
+  color: #fff;
+  font: inherit;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.search button:hover {
+  background: #3d3d3d;
+}
+
+.grid {
+  flex: 1;
+  min-height: 360px;
+}
+
+.grid :global(.MuiDataGrid-root) {
+  border: 0;
+}
+
+.grid :global(.MuiDataGrid-columnHeaders) {
+  background: #f7f7f7;
+}
+
+.grid :global(.MuiDataGrid-row:hover) {
+  background: #fff5f8;
+}
+
+.grid :global(.MuiDataGrid-actionsCell .MuiIconButton-root:last-child) {
+  color: #c62828;
+}
+
+.status {
+  width: fit-content;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.regular {
+  background: #e8f6ed;
+  color: #237441;
+}
+
+.abaixo {
+  background: #fff0ed;
+  color: #b83b2d;
+}
+
+.maximo {
+  background: #eaf2ff;
+  color: #2d5da8;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 760px) {
+  .toolbar {
+    padding: var(--space-md);
+  }
+
+  .search {
+    width: 100%;
+  }
+}

@@ -1,0 +1,114 @@
+:root {
+  color-scheme: light;
+
+    /* Cor de fundo */
+    --color-bg-primary: #F2F0F0; 
+
+    /* Headers */
+    --color-bg-secondary: #F4F3F3; 
+
+     /* Cor para texto */
+    --color-primary-text: #2E2E2E;
+
+    /* Estados */
+    --color-success: #2f9e0b;
+    --color-warning: #e6a700;
+    --color-error: #d50000;
+    --color-info: #2563eb;
+
+    /* Bordas e divisores */
+    --color-border: #FF367D;
+
+    /* Hoovers */
+    --color-primary-hoover: #DEDEDE;
+
+    /* -------------------- Tipografia -------------------- */
+  --font-display: "Poppins", "Segoe UI", sans-serif;   /* títulos */
+  --font-body: "Inter", "Segoe UI", sans-serif;        /* texto corrido */
+  --font-mono: "JetBrains Mono", Consolas, monospace;  /* código/dados */
+
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-2xl: 2rem;     /* 32px */
+  --font-size-3xl: 2.5rem;   /* 40px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.8;
+
+    /* -------------------- Espaçamento -------------------- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+
+  /* -------------------- Bordas / raios -------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  color: var(--color-primary-text);
+  background: var(--color-bg-primary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  background: var(--color-bg-primary);
+  color: var(--color-primary-text);
+}
+
+#root {
+  min-height: 100svh;
+  width: 100%;
+  background: var(--color-bg-primary);
+}
+
+h1,
+h2 {
+  color: var(--color-primary-text);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+}
+
+button {
+  color: inherit;
+}
+
+/* Valores numéricos são digitados manualmente, sem controles incrementais. */
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,136 @@
+.card {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  min-height: 320px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  box-shadow:
+    0 2px 1px -1px rgb(0 0 0 / 20%),
+    0 1px 1px rgb(0 0 0 / 14%),
+    0 1px 3px rgb(0 0 0 / 12%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px var(--space-md);
+  background: #dedada;
+  gap: var(--space-md);
+}
+
+.title {
+  margin: 0;
+  color: #242424;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+}
+
+.counter {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: #555;
+  font-size: var(--font-size-xs);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: var(--space-md);
+}
+
+.empty {
+  max-width: 150px;
+  margin: auto;
+  color: #a3a3a3;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-tight);
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-md);
+  background: #fafafa;
+  gap: var(--space-md);
+}
+
+.orderInformation {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: var(--space-xs);
+}
+
+.station {
+  color: #242424;
+  font-size: var(--font-size-sm);
+}
+
+.description {
+  color: #666;
+  font-size: var(--font-size-xs);
+}
+
+.resolveButton {
+  flex-shrink: 0;
+  min-height: 36px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-success);
+  color: #fff;
+  font: var(--font-weight-medium) var(--font-size-sm) var(--font-body);
+  cursor: pointer;
+  transition:
+    filter 160ms ease,
+    transform 160ms ease;
+}
+
+.resolveButton:hover {
+  filter: brightness(0.92);
+}
+
+.resolveButton:active {
+  transform: translateY(1px);
+}
+
+.resolveButton:focus-visible {
+  outline: 3px solid var(--color-border);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .item {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .resolveButton {
+    width: 100%;
+  }
+}

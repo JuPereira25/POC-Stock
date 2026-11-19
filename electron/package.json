@@ -1,0 +1,40 @@
+{
+  "name": "estoque-app",
+  "version": "1.0.1",
+  "description": "Aplicativo de controle de estoque",
+  "main": "main.js",
+  "author": "Delta Solutions",
+  "license": "UNLICENSED",
+  "scripts": {
+    "compile": "tsc",
+    "test": "node --test dpi.test.js",
+    "start": "tsc && electron .",
+    "build:backend": "dotnet publish ../backend/backend.csproj -c Release -r win-x64 --self-contained true -o resources/backend",
+    "build:frontend": "npm --prefix ../frontend run build && powershell -NoProfile -Command \"Remove-Item -Recurse -Force resources/frontend -ErrorAction SilentlyContinue; Copy-Item -Recurse ../frontend/dist resources/frontend\"",
+    "dist": "npm run compile && npm run build:backend && npm run build:frontend && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.estoque.app",
+    "productName": "Estoque",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "dpi.js", "package.json", "assets/favicon.ico"],
+    "extraResources": [
+      { "from": "resources/backend", "to": "backend" },
+      { "from": "resources/frontend", "to": "frontend" }
+    ],
+    "win": { "icon": "assets/favicon.png", "target": ["nsis"] },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/favicon.ico",
+      "uninstallerIcon": "assets/favicon.ico",
+      "installerHeaderIcon": "assets/favicon.ico"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,29 @@
+.main { display: flex; min-height: 100svh; width: 100%; min-width: 0; flex-direction: column; padding: 0 var(--space-lg) var(--space-lg); }
+.pageHeader { display: flex; min-height: 80px; align-items: center; padding: 0 4px; }
+.pageHeader h1 { margin: 0; font-size: var(--font-size-2xl); font-weight: var(--font-weight-medium); }
+.content { width: 100%; flex: 1; overflow: auto; border: 1px solid #e3e3e3; border-radius: var(--radius-md); background: #fff; }
+.form { padding: var(--space-lg); }
+.tableHeader, .row, .productRow { display: grid; grid-template-columns: minmax(210px, 1fr) 130px 150px minmax(180px, .8fr) 130px; gap: 14px; align-items: center; }
+.tableHeader { padding: 0 12px 10px; color: #555; font-size: var(--font-size-sm); font-weight: 600; }
+.tableHeader span:last-child { text-align: center; }
+.row { padding: 14px 12px; border-block: 1px solid #e7e7e7; }
+.field { display: flex; min-width: 0; flex-direction: column; }
+.field input, .field select { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #c9c9c9; border-radius: var(--radius-sm); background: #fff; color: var(--color-primary-text); font: inherit; outline: none; }
+.field input:focus, .field select:focus { border-color: var(--color-border); box-shadow: inset 0 0 0 1px var(--color-border); }
+.mobileLabel { display: none; }
+.addButton { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 6px; padding: 9px 12px; border: 1px solid #252525; border-radius: var(--radius-sm); background: #252525; color: #fff; font: inherit; font-size: var(--font-size-sm); font-weight: 600; cursor: pointer; }
+.addButton:hover { background: #3d3d3d; }
+.list { padding: 0 var(--space-lg) var(--space-lg); }
+.list h2 { margin: 0 0 14px; font-size: var(--font-size-lg); }
+.productRow { min-height: 58px; padding: 7px 12px; border-top: 1px solid #e7e7e7; }
+.productRow input, .productRow select { width: 100%; min-width: 0; min-height: 40px; padding: 8px 10px; border: 1px solid #d4d4d4; border-radius: var(--radius-sm); background: #fff; font: inherit; }
+.productRow span { min-width: 0; overflow-wrap: anywhere; }
+.empty { margin: 0; padding: 22px 12px; border-top: 1px solid #e7e7e7; color: #777; }
+.deleteButton { display: grid; width: 44px; height: 44px; place-self: center; place-items: center; border: 1px solid #dedede; border-radius: var(--radius-sm); background: #fff; color: #c62828; cursor: pointer; }
+.deleteButton:hover { border-color: #e9b3b3; background: #fff5f5; }
+.rowActions { display: flex; justify-content: center; gap: 6px; }
+.saveButton { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid #b7dfc5; border-radius: var(--radius-sm); background: #f0faf3; color: #176535; cursor: pointer; }
+.editButton { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid #c9d5e8; border-radius: var(--radius-sm); background: #f4f7fb; color: #295d9b; cursor: pointer; }
+.saveButton:disabled, .editButton:disabled, .deleteButton:disabled { cursor: not-allowed; opacity: .55; }
+@media (max-width: 900px) { .tableHeader { display: none; } .row, .productRow { grid-template-columns: 1fr 1fr; } .mobileLabel { display: block; margin-bottom: 6px; color: #555; font-size: var(--font-size-xs); font-weight: 600; } .addButton { grid-column: 1 / -1; } .productRow span::before { content: attr(data-label); display: block; margin-bottom: 4px; color: #777; font-size: var(--font-size-xs); font-weight: 600; } .deleteButton { place-self: end; } }
+@media (max-width: 600px) { .main { padding: 0 var(--space-md) var(--space-md); } .pageHeader { min-height: 68px; } .pageHeader h1 { font-size: var(--font-size-xl); } .form, .list { padding: var(--space-md); } .row, .productRow { grid-template-columns: 1fr; padding-inline: 0; } .deleteButton { place-self: start; } }
